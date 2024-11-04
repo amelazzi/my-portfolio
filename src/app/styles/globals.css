@@ -1,0 +1,39 @@
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-noto-sans);
+  background-color: var(--grey-color);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+h1,
+h2,
+p {
+  width: fit-content;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: white;
+  font-family: var(--font-oswald);
+  font-size: 58px;
+  font-weight: 400;
+}
