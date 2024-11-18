@@ -1,8 +1,14 @@
-"use client";
-import { usePathname } from "next/navigation";
+import Profile from "./components/profile/profile";
+import Sidebar from "./components/sidebar/sidebar";
 
 export default function Index() {
-  const pathname = usePathname();
-
-  return <div>{pathname === "/" && <div>Welcome to my portfolio</div>}</div>;
+  return (
+    <div className="container">
+      <Profile />
+      <div className="portfolio-container">
+        <Sidebar />
+        <main></main>
+      </div>
+    </div>
+  );
 }
