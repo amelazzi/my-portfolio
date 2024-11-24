@@ -12,9 +12,11 @@ function Sidebar() {
       <nav>
         <Link
           href="/"
-          className={`section-link ${pathname === "/" ? "active" : ""}`}
+          className={`section-link ${
+            pathname === "/" || pathname === "/about" ? "active" : ""
+          }`}
         >
-          {pathname === "/" && "/"} ABOUT
+          {(pathname === "/" || pathname === "/about") && "/"} ABOUT
         </Link>
       </nav>
     </div>
