@@ -1,7 +1,8 @@
+"use client";
+import { usePathname } from "next/navigation";
+
 export default function Index() {
-  return (
-    <div>
-      <h1>Welcome to my portfolio</h1>
-    </div>
-  );
+  const pathname = usePathname();
+
+  return <div>{pathname === "/" && <div>Welcome to my portfolio</div>}</div>;
 }
