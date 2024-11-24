@@ -37,3 +37,19 @@ h1 {
   font-size: 58px;
   font-weight: 400;
 }
+
+button {
+  padding: 8px 24px;
+  background-color: var(--purple-color);
+  border: none;
+  color: white;
+  width: fit-content;
+  font-size: 18px;
+  font-family: var(--font-oswald);
+  border-radius: 24px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+}
