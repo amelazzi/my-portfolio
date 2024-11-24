@@ -1,6 +1,8 @@
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import "./styles/colors.css";
+import "./layout.css";
+import Sidebar from "./components/sidebar/sidebar";
 
 const oswald = localFont({
   src: "./fonts/OswaldVF.ttf",
@@ -22,7 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${oswald.variable} ${notoSans.variable}`}>
-        {children}
+        <div className="portfolio-container">
+          <Sidebar />
+          <main>
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

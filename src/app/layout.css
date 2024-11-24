@@ -1,0 +1,15 @@
+.portfolio-container {
+  display: grid;
+  grid-template-columns: 675px 1fr;
+  grid-template-areas: "sidebar main";
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+}
+
