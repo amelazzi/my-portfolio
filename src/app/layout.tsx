@@ -3,6 +3,7 @@ import "./styles/globals.css";
 import "./styles/colors.css";
 import "./layout.css";
 import Sidebar from "./components/sidebar/sidebar";
+import Profile from "./components/profile/profile";
 
 const oswald = localFont({
   src: "./fonts/OswaldVF.ttf",
@@ -24,11 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${oswald.variable} ${notoSans.variable}`}>
+        <Profile />
         <div className="portfolio-container">
           <Sidebar />
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
         </div>
       </body>
     </html>
