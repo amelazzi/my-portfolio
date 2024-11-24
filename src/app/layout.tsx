@@ -28,7 +28,12 @@ export default function RootLayout({
         <Profile />
         <div className="portfolio-container">
           <Sidebar />
-          <main>{children}</main>
+          <main>
+            <a href="/resume_Amel_AZZI.pdf" download>
+              <button className="download-btn">Download CV</button>
+            </a>
+            {children}
+          </main>
         </div>
       </body>
     </html>
