@@ -1,14 +1,22 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./sidebar.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 function Sidebar() {
   const pathname = usePathname();
+  const sidebarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (sidebarRef.current) {
+      sidebarRef.current.style.width =
+        pathname === "/" || pathname === "/about" ? "675px" : "400px";
+    }
+  }, [pathname]);
 
   return (
-    <div className="sidebar-container">
+    <div className="sidebar-container" ref={sidebarRef}>
       <nav>
         <Link
           href="/"
@@ -17,6 +25,14 @@ function Sidebar() {
           }`}
         >
           {(pathname === "/" || pathname === "/about") && "/"} ABOUT
+        </Link>
+        <Link
+          href="/experiences"
+          className={`section-link ${
+            pathname === "/experiences" ? "active" : ""
+          }`}
+        >
+          {pathname === "/experiences" && "/"} EXPERIENCES
         </Link>
       </nav>
     </div>
