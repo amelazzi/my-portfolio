@@ -29,13 +29,29 @@ a {
   text-decoration: none;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   background-clip: text;
   -webkit-background-clip: text;
   color: white;
   font-family: var(--font-oswald);
   font-size: 58px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 58px;
+}
+
+h2 {
+  font-size: 38px;
+}
+
+h3 {
+  font-size: 24px;
   font-weight: 400;
+  color: lightgray;
 }
 
 button {
