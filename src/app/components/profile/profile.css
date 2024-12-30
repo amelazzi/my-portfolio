@@ -1,12 +1,14 @@
 .profile-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 64px;
-  position: absolute;
-  left: 400px;
-  z-index: 1;
+}
+
+.profile-information {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .picture-container {
@@ -46,4 +48,9 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
 }
