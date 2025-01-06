@@ -81,9 +81,4 @@ button {
   font-size: 18px;
   font-family: var(--font-oswald);
   border-radius: 24px;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.15);
-  }
 }
