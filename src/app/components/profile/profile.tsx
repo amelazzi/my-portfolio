@@ -71,7 +71,7 @@ function Profile() {
         <div className="information" ref={informationRef}>
           <h2>Amel AZZI</h2>
           <div>--------------------------</div>
-          <h3> Fullstack Developer </h3>
+          <h4> Fullstack Developer </h4>
         </div>
       </div>
       <div className="social-media-container" ref={SocialMediasRef}>
