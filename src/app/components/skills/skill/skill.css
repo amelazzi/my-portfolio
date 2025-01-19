@@ -1,0 +1,31 @@
+.skill-container {
+  width: 280px;
+  border-radius: 48px;
+  background-color: var(--dark-grey-color);
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px;
+}
+
+.skill-icon-container {
+  max-width: 64px;
+  min-width: 64px;
+  max-height: 64px;
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-rate {
+  font-size: 22px;
+}
+
+.skill-name {
+  font-family: var(--font-oswald);
+  font-size: 18px;
+  color: lightgrey;
+}
