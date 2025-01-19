@@ -1,0 +1,13 @@
+.volunteerings-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.volunteerings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
