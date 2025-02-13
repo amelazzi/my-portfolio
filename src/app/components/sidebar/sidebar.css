@@ -1,5 +1,4 @@
 .sidebar-container {
-  width: 675px;
   height: 100vh;
   position: fixed;
   background-color: var(--primary-color);
@@ -36,6 +35,6 @@ nav {
     }
   }
   &:hover {
-    cursor: pointer;
+    cursor: default;
   }
 }

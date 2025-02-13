@@ -11,7 +11,7 @@ function Sidebar() {
   useEffect(() => {
     if (sidebarRef.current) {
       sidebarRef.current.style.width =
-        pathname === "/" || pathname === "/about" ? "675px" : "400px";
+        pathname === "/" || pathname === "/about" ? "650px" : "400px";
     }
   }, [pathname]);
 
