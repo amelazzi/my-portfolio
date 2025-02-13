@@ -6,7 +6,7 @@ import Image from "next/image";
 import Picture from "../../../../public/images/profile-picture.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { handleStyleUpdate } from "@/app/utils/updateStyle";
+import { handleStyleUpdate } from "@/utils/updateStyle";
 
 function Profile() {
   const gitHubRef = useRef<HTMLDivElement>(null);

@@ -7,7 +7,7 @@ import Sidebar from "./components/sidebar/sidebar";
 import Profile from "./components/profile/profile";
 import { usePathname } from "next/navigation";
 import { useRef, useEffect } from "react";
-import { handleStyleUpdate } from "./utils/updateStyle";
+import { handleStyleUpdate } from "../utils/updateStyle";
 
 const oswald = localFont({
   src: "./fonts/OswaldVF.ttf",
