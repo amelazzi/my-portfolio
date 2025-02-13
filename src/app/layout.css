@@ -19,7 +19,7 @@
 main {
   grid-area: main;
   height: 75vh;
-  padding: 32px;
+  padding: 32px 64px;
 }
 
 .download-btn {

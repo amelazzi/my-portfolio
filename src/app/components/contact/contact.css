@@ -1,0 +1,30 @@
+.contact-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 64px;
+}
+
+.contact {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+.contact-information {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-top: 48px;
+}
+
+.coords {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
