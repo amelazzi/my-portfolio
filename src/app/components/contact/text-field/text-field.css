@@ -1,0 +1,9 @@
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  p {
+    font-family: var(--font-oswald);
+    font-size: 24px;
+  }
+}
