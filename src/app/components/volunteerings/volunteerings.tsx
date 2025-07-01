@@ -4,7 +4,7 @@ import Volunteering from "./volunteering/volunteering";
 
 function Volunteerings() {
   return (
-    <div className="volunteerings-section">
+    <div className="section">
       <h1> MY VOLUNTEERINGS </h1>
       <div className="volunteerings">
         <Volunteering

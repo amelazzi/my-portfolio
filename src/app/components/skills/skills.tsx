@@ -50,7 +50,7 @@ function skills() {
   };
 
   return (
-    <div className="skills-section">
+    <div className="section">
       <h1>MY SKILLS</h1>
       <AppBar position="static">
         <Tabs

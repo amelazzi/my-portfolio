@@ -1,13 +1,3 @@
-.skills-section {
-  width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  gap: 64px;
-}
-
 .skills-container {
   display: flex;
   flex-direction: column;
