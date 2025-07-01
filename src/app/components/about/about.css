@@ -1,5 +1,4 @@
 .about {
-  width: 500px;
   margin-left: 312px;
   display: flex;
   flex-direction: column;
@@ -13,6 +12,23 @@
   }
 }
 
+.full-name {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
 .full-name h1:nth-child(2) {
   color: var(--purple-color);
+}
+
+.summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  p {
+    text-indent: 16px;
+    line-height: 1.5;
+  }
 }
