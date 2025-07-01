@@ -42,7 +42,7 @@ export default function RootLayout({
       pathname,
       headerRef,
       "width: calc(100% - 320px); align-items: center; transform: none; height:25vh",
-      "width: calc(100% - 420px); top: 10%; transform: translateY(-50%)"
+      "top: 10%; transform: translateY(-50%)"
     );
   }, [pathname]);
 
@@ -53,7 +53,7 @@ export default function RootLayout({
           <Profile />
         </div>
         <a href="/resume_Amel_AZZI.pdf" download>
-          <button className="download-btn">Download CV</button>
+          <button className="download-btn">Download Resume</button>
         </a>
         <div className="portfolio-container" ref={portfolioContainerRef}>
           <Sidebar />
