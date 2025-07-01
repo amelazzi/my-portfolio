@@ -59,8 +59,9 @@ function skills() {
           variant="fullWidth"
           aria-label="full width tabs example"
           sx={{
-            backgroundColor: "#181818", // Background color of the tabs container
+            backgroundColor: "#131111", // Background color of the tabs container
             color: "white",
+            boxShadow: "none",
             "& .MuiTabs-indicator": {
               backgroundColor: "#554c8f", // Color of the selected tab indicator
             },
@@ -77,13 +78,62 @@ function skills() {
             },
           }}
         >
-          <Tab label="Frontend" {...a11yProps(0)} />
-          <Tab label="Backend" {...a11yProps(1)} />
-          <Tab label="Databases" {...a11yProps(2)} />
+          <Tab label="Backend" {...a11yProps(0)} />
+          <Tab label="Databases" {...a11yProps(1)} />
+          <Tab label="Frontend" {...a11yProps(2)} />
           <Tab label="Version Control" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
+        <div className="skills-container">
+          <div className="skills">
+            <Skill
+              name="Node JS"
+              logo="/icons/nodejs-logo.svg"
+              level="Advanced"
+            />
+            <Skill
+              name="Next JS"
+              logo="/icons/next-logo.svg"
+              level="Beginner"
+            />
+            <Skill
+              name="Python"
+              logo="/icons/python-logo.svg"
+              level="Intermediate"
+            />
+            <Skill name="REST" logo="/icons/api.png" level="Intermediate" />
+          </div>
+          <div className="skills">
+            <Skill name="C#" logo="/icons/csharp-logo.svg" level="Advanced" />
+          </div>
+        </div>
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <div className="skills-container">
+          <div className="skills">
+            <Skill
+              name="PostgreSQl"
+              logo="/icons/postgresql-logo.svg"
+              level="Advanced"
+            />
+            <Skill
+              name="MySQL"
+              logo="/icons/mysql-logo.svg"
+              level="Intermediate"
+            />
+            <Skill
+              name="Oracle"
+              logo="/icons/oracle-logo.svg"
+              level="Intermediate"
+            />
+          </div>
+          <div className="skills">
+            <Skill name="NoSQL" logo="/icons/database.png" level="Beginner" />
+          </div>
+        </div>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
         <div className="skills-container">
           <div className="skills">
             <Skill name="React JS" logo="/icons/reactjs.svg" level="Advanced" />
@@ -116,55 +166,6 @@ function skills() {
               logo="/icons/figma-logo.svg"
               level="Intermediate"
             />
-          </div>
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <div className="skills-container">
-          <div className="skills">
-            <Skill
-              name="Node JS"
-              logo="/icons/nodejs-logo.svg"
-              level="Advanced"
-            />
-            <Skill
-              name="Next JS"
-              logo="/icons/next-logo.svg"
-              level="Beginner"
-            />
-            <Skill
-              name="Python"
-              logo="/icons/python-logo.svg"
-              level="Intermediate"
-            />
-            <Skill name="REST" logo="/icons/api.png" level="Intermediate" />
-          </div>
-          <div className="skills">
-            <Skill name="C#" logo="/icons/csharp-logo.svg" level="Advanced" />
-          </div>
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <div className="skills-container">
-          <div className="skills">
-            <Skill
-              name="PostgreSQl"
-              logo="/icons/postgresql-logo.svg"
-              level="Advanced"
-            />
-            <Skill
-              name="MySQL"
-              logo="/icons/mysql-logo.svg"
-              level="Intermediate"
-            />
-            <Skill
-              name="Oracle"
-              logo="/icons/oracle-logo.svg"
-              level="Intermediate"
-            />
-          </div>
-          <div className="skills">
-            <Skill name="NoSQL" logo="/icons/database.png" level="Beginner" />
           </div>
         </div>
       </TabPanel>
