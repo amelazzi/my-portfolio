@@ -1,10 +1,6 @@
 .contact-section {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  gap: 64px;
+  background-color: var(--grey-color);
+  padding-bottom: 0px;
 }
 
 .contact {
