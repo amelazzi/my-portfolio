@@ -27,12 +27,20 @@ function Sidebar() {
           {(pathname === "/" || pathname === "/about") && "/"} ABOUT
         </Link>
         <Link
-          href="/experiences"
+          href="education/"
           className={`section-link ${
-            pathname === "/experiences" ? "active" : ""
+            pathname === "/education" ? "active" : ""
           }`}
         >
-          {pathname === "/experiences" && "/"} EXPERIENCES
+          {pathname === "/education" && "/"} EDUCATION
+        </Link>
+        <Link
+          href="/projects"
+          className={`section-link ${
+            pathname.includes("/projects") ? "active" : ""
+          }`}
+        >
+          {pathname.includes("/projects") && "/"} PROJECTS
         </Link>
         <Link
           href="/skills"

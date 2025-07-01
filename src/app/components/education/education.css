@@ -1,14 +1,10 @@
-.section {
+.education-section {
   height: 100%;
   background-color: var(--dark-grey-color);
   border-radius: 8px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
-.education-container,
-.experiences-container {
+.education-container {
   padding: 48px;
   display: flex;
   flex-direction: column;
@@ -16,8 +12,7 @@
   overflow-y: hidden;
 }
 
-.educations,
-.experiences {
+.educations {
   display: flex;
   flex-direction: column;
   gap: 24px;

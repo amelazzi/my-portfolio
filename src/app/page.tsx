@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import About from "./about/page";
-import Experiences from "./experiences/page";
+import Projects from "./projects/page";
 
 export default function Index() {
   const pathname = usePathname();
@@ -9,7 +9,7 @@ export default function Index() {
   return (
     <div>
       {pathname === "/" && <About />}
-      {pathname === "/experiences" && <Experiences />}
+      {pathname === "/projects" && <Projects />}
     </div>
   );
 }
