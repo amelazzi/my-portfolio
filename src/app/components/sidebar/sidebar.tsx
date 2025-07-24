@@ -27,14 +27,6 @@ function Sidebar() {
           {(pathname === "/" || pathname === "/about") && "/"} ABOUT
         </Link>
         <Link
-          href="education/"
-          className={`section-link ${
-            pathname === "/education" ? "active" : ""
-          }`}
-        >
-          {pathname === "/education" && "/"} EDUCATION
-        </Link>
-        <Link
           href="/projects"
           className={`section-link ${
             pathname.includes("/projects") ? "active" : ""
