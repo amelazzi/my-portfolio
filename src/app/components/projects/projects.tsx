@@ -1,33 +1,22 @@
 import React from "react";
-import "./projects.css";
 import Card from "./card/card";
+import { projects } from "@/app/components/projects/data";
+import "./projects.css";
 
 function Projects() {
-  const projects = [
-    {
-      title: "Smart City IOS app",
-      slug: "mdmp",
-      logo: "/icons/mysql-logo.svg",
-      role: "iOS Developer",
-      summary:
-        "Developed an iOS app to help users explore city events and services with map and agenda features.",
-      stacks: ["Swift", "iOS SDK", "MapKit"],
-    },
-  ];
-
   return (
     <div className="section">
       <h1>Projects</h1>
       <div className="projects">
-        {projects.map((project, index) => (
+        {Object.entries(projects).map(([key, project]) => (
           <Card
-            key={index}
+            key={key}
             title={project.title}
-            slug={project.slug}
+            slug={key}
             logo={project.logo}
             role={project.role}
             summary={project.summary}
-            stacks={project.stacks}
+            stacks={project.stacks.roleStack}
           />
         ))}
       </div>

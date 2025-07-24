@@ -1,10 +1,10 @@
 .projects {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 64px;
   width: 100%;
   height: 100%;
   overflow: scroll;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: space-between;
+  row-gap: 32px;
 }
