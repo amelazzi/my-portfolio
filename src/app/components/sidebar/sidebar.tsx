@@ -41,6 +41,14 @@ function Sidebar() {
           {pathname === "/skills" && "/"} SKILLS
         </Link>
         <Link
+          href="/techtalks"
+          className={`section-link ${
+            pathname === "/techtalks" ? "active" : ""
+          }`}
+        >
+          {pathname === "/techtalks" && "/"} TECH TALKS
+        </Link>
+        <Link
           href="/volunteerings"
           className={`section-link ${
             pathname === "/volunteerings" ? "active" : ""
