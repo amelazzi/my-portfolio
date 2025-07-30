@@ -2,7 +2,6 @@ import React from "react";
 import { skills } from "@/app/components/skills/data";
 import Image from "next/image";
 import "./skills.css";
-import skill from "./skill/skill";
 
 function Skills() {
   return (
