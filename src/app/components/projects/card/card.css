@@ -1,6 +1,6 @@
 .card {
   width: 350px;
-  height: 500px;
+  height: 480px;
   border: 0.8px solid var(--light-grey);
   border-radius: 8px;
   display: flex;
@@ -50,6 +50,13 @@
   justify-content: space-between;
   gap: 16px;
   flex: 1;
+}
+
+.card-summary {
+  flex: 1;
+  p {
+    line-height: 1.5;
+  }
 }
 
 .project-info {
