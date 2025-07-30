@@ -1,193 +1,76 @@
-"use client";
-import React, { SyntheticEvent, useState } from "react";
+import React from "react";
+import { skills } from "@/app/components/skills/data";
+import Image from "next/image";
 import "./skills.css";
-import Skill from "./skill/skill";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+import skill from "./skill/skill";
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  dir?: string;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`,
-  };
-}
-
-function skills() {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event: SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
+function Skills() {
   return (
     <div className="section">
       <h1>MY SKILLS</h1>
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="fullWidth"
-          aria-label="full width tabs example"
-          sx={{
-            backgroundColor: "#131111", // Background color of the tabs container
-            color: "white",
-            boxShadow: "none",
-            "& .MuiTabs-indicator": {
-              backgroundColor: "#554c8f", // Color of the selected tab indicator
-            },
-            "& .MuiTab-root": {
-              fontFamily: "var(--font-oswald)",
-              fontSize: "20px",
-              color: "grey", // Inactive tab text color
-            },
-            "& .MuiTab-root.Mui-selected": {
-              color: "white", // Active tab text color
-            },
-            "& .MuiTabs-flexContainer": {
-              borderBottom: "1px solid #181818", // Customize bottom border
-            },
-          }}
-        >
-          <Tab label="Backend" {...a11yProps(0)} />
-          <Tab label="Databases" {...a11yProps(1)} />
-          <Tab label="Frontend" {...a11yProps(2)} />
-          <Tab label="Version Control" {...a11yProps(3)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <div className="skills-container">
-          <div className="skills">
-            <Skill
-              name="Node JS"
-              logo="/icons/nodejs-logo.svg"
-              level="Advanced"
-            />
-            <Skill
-              name="Next JS"
-              logo="/icons/next-logo.svg"
-              level="Beginner"
-            />
-            <Skill
-              name="Python"
-              logo="/icons/python-logo.svg"
-              level="Intermediate"
-            />
-            <Skill name="REST" logo="/icons/api.png" level="Intermediate" />
+      <div className="skills-container">
+        <div className="carousel-container">
+          <div className="skills-carousel">
+            <div className="skills-track">
+              {[...skills.Backend, ...skills.Databases].map((skill, index) => (
+                <div className="skill" key={index}>
+                  <div className="skill-name"> {skill.name} </div>
+                  <div className="skill-logo">
+                    <Image
+                      src={`/icons/${skill.logo}`}
+                      width={60}
+                      height={60}
+                      alt={`${skill.name} icon`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="skills">
-            <Skill name="C#" logo="/icons/csharp-logo.svg" level="Advanced" />
+          <div className="skills-carousel">
+            <div className="skills-track">
+              {skills.Frontend.map((skill, index) => (
+                <div className="skill" key={index}>
+                  <div className="skill-name"> {skill.name} </div>
+                  <div className="skill-logo">
+                    <Image
+                      src={`/icons/${skill.logo}`}
+                      width={60}
+                      height={60}
+                      alt={`${skill.name} icon`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <div className="skills-container">
-          <div className="skills">
-            <Skill
-              name="PostgreSQl"
-              logo="/icons/postgresql-logo.svg"
-              level="Advanced"
-            />
-            <Skill
-              name="MySQL"
-              logo="/icons/mysql-logo.svg"
-              level="Intermediate"
-            />
-            <Skill
-              name="Oracle"
-              logo="/icons/oracle-logo.svg"
-              level="Intermediate"
-            />
-          </div>
-          <div className="skills">
-            <Skill name="NoSQL" logo="/icons/database.png" level="Beginner" />
-          </div>
+        <hr className="skills-divider " />
+        <div className="skills">
+          <li>
+            <h4>• Front-End :</h4>
+            <p>JavaScript, Typescript, ReactJS</p>
+          </li>
+          <li>
+            <h4>• Back-End :</h4>
+            <p>Node.js, ExpressJS, Python, Django</p>
+          </li>
+          <li>
+            <h4>• Databases :</h4>
+            <p>MySQL, PostgreSQL</p>
+          </li>
+          <li>
+            <h4>• Tools & Platforms :</h4>
+            <p>Git, Docker, AWS, Heroku</p>
+          </li>
+          <li>
+            <h4>• Others :</h4>
+            <p>RESTful APIs, GraphQL, Agile Methodologies</p>
+          </li>
         </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <div className="skills-container">
-          <div className="skills">
-            <Skill name="React JS" logo="/icons/reactjs.svg" level="Advanced" />
-            <Skill
-              name="JavaScript"
-              logo="/icons/js-logo.svg"
-              level="Intermediate"
-            />
-            <Skill
-              name="TypeScript"
-              logo="/icons/ts-logo.svg"
-              level="Advanced"
-            />
-          </div>
-          <div className="skills">
-            <Skill
-              name="Xamarin"
-              logo="/icons/xamarin-logo.svg"
-              level="Intermediate"
-            />
-            <Skill
-              name="Flutter"
-              logo="/icons/flutter-logo.svg"
-              level="Beginner"
-            />
-          </div>
-          <div className="skills">
-            <Skill
-              name="Figma"
-              logo="/icons/figma-logo.svg"
-              level="Intermediate"
-            />
-          </div>
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <div className="skills-container">
-          <div className="skills">
-            <Skill name="Git" logo="/icons/git-logo.svg" level="Advanced" />
-            <Skill
-              name="GitHub"
-              logo="/icons/github-logo.svg"
-              level="Advanced"
-            />
-            <Skill
-              name="GitLab"
-              logo="/icons/gitlab-logo.svg"
-              level="Intermediate"
-            />
-          </div>
-        </div>
-      </TabPanel>
+      </div>
     </div>
   );
 }
 
-export default skills;
+export default Skills;
