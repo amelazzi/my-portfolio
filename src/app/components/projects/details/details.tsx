@@ -3,7 +3,7 @@ import React from "react";
 import "./details.css";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ProjectDetails } from "@/types/projects";
+import { ProjectDetails } from "@/types/project.types";
 import Image from "next/image";
 
 function Details({ projectDetails }: { projectDetails: ProjectDetails }) {
