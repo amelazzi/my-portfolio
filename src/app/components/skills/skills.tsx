@@ -1,5 +1,5 @@
 import React from "react";
-import { skills } from "@/app/components/skills/data";
+import { skills } from "@/data/skills.data";
 import Image from "next/image";
 import "./skills.css";
 
