@@ -101,3 +101,14 @@ button {
   border-radius: 8px;
   padding: 32px;
 }
+
+.cards-container {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
+  justify-content: space-between;
+  row-gap: 32px;
+}
