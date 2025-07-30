@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card/card";
-import { projects } from "@/app/components/projects/data";
+import { projects } from "@/data/projects.data";
 import "./projects.css";
 
 function Projects() {

@@ -1,4 +1,4 @@
-import { projects } from "@/app/components/projects/data";
+import { projects } from "@/data/projects.data";
 import Details from "@/app/components/projects/details/details";
 
 type Props = {
