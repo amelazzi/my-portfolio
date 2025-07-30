@@ -16,6 +16,8 @@ function Projects() {
             logo={project.logo}
             role={project.role}
             summary={project.summary}
+            client={project.client}
+            dates={project.dates}
             stacks={project.stacks.roleStack}
           />
         ))}
