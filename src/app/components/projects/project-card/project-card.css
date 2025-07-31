@@ -1,17 +1,5 @@
-.card {
-  width: 350px;
+.project {
   height: 480px;
-  border: 0.8px solid var(--light-grey);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 24px;
-  background-color: var(--grey-color);
-  &:hover {
-    border: none;
-    cursor: pointer;
-  }
 }
 
 .card-header {
@@ -54,9 +42,6 @@
 
 .card-summary {
   flex: 1;
-  p {
-    line-height: 1.5;
-  }
 }
 
 .project-info {
