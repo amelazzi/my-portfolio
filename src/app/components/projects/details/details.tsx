@@ -13,12 +13,12 @@ function Details({ projectDetails }: { projectDetails: ProjectDetails }) {
     <div className="section details-section">
       <div className="details-header">
         <div className="project-logo-container">
-          {projectDetails.link ? (
-            <Link href={projectDetails.link} target="_blank">
+          {projectDetails.info.link ? (
+            <Link href={projectDetails.info.link} target="_blank">
               <Image
                 className="project-logo"
                 alt="Get it on Google Play"
-                src={projectDetails.logo}
+                src={projectDetails.info.logo}
                 width={150}
                 height={150}
               />
@@ -27,7 +27,7 @@ function Details({ projectDetails }: { projectDetails: ProjectDetails }) {
             <Image
               className="project-logo"
               alt="Get it on Google Play"
-              src={projectDetails.logo}
+              src={projectDetails.info.logo}
               width={150}
               height={150}
             />
@@ -36,7 +36,7 @@ function Details({ projectDetails }: { projectDetails: ProjectDetails }) {
         <div className="project-infos">
           <div>
             <h2> {projectName} </h2>
-            <h4> {projectDetails.role} </h4>
+            <h4> {projectDetails.info.role} </h4>
           </div>
           {projectDetails.stats && (
             <div className="project-stats">
@@ -68,19 +68,20 @@ function Details({ projectDetails }: { projectDetails: ProjectDetails }) {
       <div className="tech-stack">
         <div className="stacks">
           <h6> My Role: </h6>
-          {projectDetails.stacks.roleStack.map((stack, index) => (
+          {projectDetails.info.stacks.roleStack.map((stack, index) => (
             <p key={index}>
               {stack}
-              {index !== projectDetails.stacks.roleStack.length - 1 && ","}
+              {index !== projectDetails.info.stacks.roleStack.length - 1 && ","}
             </p>
           ))}
         </div>
         <div className="stacks">
           <h6> Project Stack: </h6>
-          {projectDetails.stacks.projectStack.map((stack, index) => (
+          {projectDetails.info.stacks.projectStack.map((stack, index) => (
             <p key={index}>
               {stack}
-              {index !== projectDetails.stacks.projectStack.length - 1 && ","}
+              {index !== projectDetails.info.stacks.projectStack.length - 1 &&
+                ","}
             </p>
           ))}
         </div>
