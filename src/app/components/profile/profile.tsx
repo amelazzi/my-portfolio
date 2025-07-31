@@ -70,7 +70,7 @@ function Profile() {
         </div>
         <div className="information" ref={informationRef}>
           <h2>Amel AZZI</h2>
-          <div>--------------------------</div>
+          <div>-----------------------------</div>
           <h4> Fullstack Developer </h4>
         </div>
       </div>
