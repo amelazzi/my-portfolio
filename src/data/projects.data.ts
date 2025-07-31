@@ -4,7 +4,7 @@ export const projects: Record<string, ProjectDetails> = {
   Emerga: {
     title: "Real-Time Emergency Platform",
     role: "Tech Lead",
-    logo: "/icons/logo-emerga.png",
+    logo: "/icons/emerga-logo.png",
     link: "https://emerga.fr",
     summary:
       "Built a real-time platform for emergency response teams with live data streams, interactive maps, and responder coordination.",
