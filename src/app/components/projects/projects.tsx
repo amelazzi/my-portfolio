@@ -8,17 +8,7 @@ function Projects() {
       <h1>Projects</h1>
       <div className="cards-container">
         {Object.entries(projects).map(([key, project]) => (
-          <ProjectCard
-            key={key}
-            title={project.title}
-            slug={key}
-            logo={project.logo}
-            role={project.role}
-            summary={project.summary}
-            client={project.client}
-            dates={project.dates}
-            stacks={project.stacks.roleStack}
-          />
+          <ProjectCard key={key} slug={key} projectInfo={project.info} />
         ))}
       </div>
     </div>
