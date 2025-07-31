@@ -65,7 +65,7 @@ export const projects: Record<string, ProjectDetails> = {
     logo: "/icons/logo-charriere.png",
     link: "https://apps.apple.com/fr/app/charriere-distribution/id6503040552?l=en-GB",
     summary:
-      "Built a centralized API and dashboards to manage delivery operations. Streamlined order flow and improved visualization of key data points for internal teams.",
+      "Developed a centralized API with dashboards to optimize delivery operations and enhance internal data visibility.",
     overview: `At k-ciopé, I led the development of a secure, centralized order and delivery platform used across mobile and web dashboards.
     The system supported real-time order tracking, status updates, and detailed performance reporting. I also enhanced the dashboard UX with clear, actionable visualizations enabling better decision-making for logistics teams.`,
     client: "charriere",

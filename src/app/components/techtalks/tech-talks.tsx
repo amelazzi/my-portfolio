@@ -1,4 +1,4 @@
-import Talk from "./talk/talk";
+import TalkCard from "./talk-card/talk-card";
 import { talks } from "../../../data/talks.data";
 
 function TechTalks() {
@@ -7,7 +7,7 @@ function TechTalks() {
       <h1>Technical Talks</h1>
       <div className="cards-container">
         {talks.map((talk, index) => (
-          <Talk key={index} talk={talk} />
+          <TalkCard key={index} talk={talk} />
         ))}
       </div>
     </div>

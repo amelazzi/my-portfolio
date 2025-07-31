@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import "./card.css";
+import "./project-card.css";
 import Link from "next/link";
 import { ProjectDates } from "@/types/project.types";
 
-function Card({
+function ProjectCard({
   title,
   slug,
   role,
@@ -25,7 +25,7 @@ function Card({
 }) {
   return (
     <Link href={`/projects/${slug}`}>
-      <div className="card">
+      <div className="project card">
         <div className="card-header">
           <div className="card-logo">
             <Image
@@ -71,4 +71,4 @@ function Card({
   );
 }
 
-export default Card;
+export default ProjectCard;

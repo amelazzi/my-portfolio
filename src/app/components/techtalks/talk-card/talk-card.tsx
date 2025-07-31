@@ -1,13 +1,13 @@
 import Image from "next/image";
-import "./talk.css";
+import "./talk-card.css";
 import { TalkInfo } from "@/types/talk.types";
 import { formatDate } from "@/utils/date";
 import Link from "next/link";
 
-function Talk({ talk }: { talk: TalkInfo }) {
+function TalkCard({ talk }: { talk: TalkInfo }) {
   return (
     <Link href={talk.link} target="_blank">
-      <div className="talk">
+      <div className="talk card">
         <div className="talk-picture">
           <Image
             src={talk.image}
@@ -29,4 +29,4 @@ function Talk({ talk }: { talk: TalkInfo }) {
   );
 }
 
-export default Talk;
+export default TalkCard;

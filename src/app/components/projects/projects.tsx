@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./card/card";
+import ProjectCard from "./project-card/project-card";
 import { projects } from "@/data/projects.data";
 
 function Projects() {
@@ -8,7 +8,7 @@ function Projects() {
       <h1>Projects</h1>
       <div className="cards-container">
         {Object.entries(projects).map(([key, project]) => (
-          <Card
+          <ProjectCard
             key={key}
             title={project.title}
             slug={key}
