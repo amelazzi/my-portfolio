@@ -1,6 +1,3 @@
-import { z } from "zod";
-import { ProjectDatesSchema } from "@/schemas/projectDates.schema";
-
 export type Stack = {
   roleStack: string[];
   projectStack: string[];
@@ -17,15 +14,19 @@ export type ProjectDates = {
   end: number;
 };
 
-export type ProjectDetails = {
+export type ProjectInfo = {
   title: string;
   role: string;
   logo: string;
-  link?: string;
-  stats?: ProjectStats;
   summary: string;
-  overview: string;
   client: string;
   dates: ProjectDates;
   stacks: Stack;
+  link?: string;
+};
+
+export type ProjectDetails = {
+  info: ProjectInfo;
+  stats?: ProjectStats;
+  overview: string;
 };
