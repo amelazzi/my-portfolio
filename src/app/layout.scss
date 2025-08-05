@@ -1,12 +1,11 @@
 .portfolio-container {
   display: grid;
+  grid-template-columns: 650px 1fr;
   grid-template-areas: "sidebar main";
   position: relative;
-}
-
-.profile-container {
-  position: absolute;
-  z-index: 1;
+  &.compact {
+    grid-template-columns: 400px 1fr;
+  }
 }
 
 .sidebar {
