@@ -1,67 +1,36 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import "./sidebar.css";
+import React from "react";
+import "./sidebar.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { navItem } from "@/types/sidebar-types";
+
+const navItems: navItem[] = [
+  { href: "/", label: "about", match: ["/", "/about"] },
+  { href: "/projects", label: "projects", match: ["/projects"] },
+  { href: "/skills", label: "skills", match: ["/skills"] },
+  { href: "/techtalks", label: "techtalks", match: ["/techtalks"] },
+  { href: "/volunteerings", label: "volunteerings", match: ["/volunteerings"] },
+  { href: "/contact", label: "contact", match: ["/contact"] },
+];
 
 function Sidebar() {
   const pathname = usePathname();
-  const sidebarRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (sidebarRef.current) {
-      sidebarRef.current.style.width =
-        pathname === "/" || pathname === "/about" ? "650px" : "400px";
-    }
-  }, [pathname]);
-
+  const isCompact = pathname !== "/" && pathname !== "/about";
   return (
-    <div className="sidebar-container" ref={sidebarRef}>
+    <div className={`sidebar-container ${isCompact ? "compact" : ""}`}>
       <nav>
-        <Link
-          href="/"
-          className={`section-link ${
-            pathname === "/" || pathname === "/about" ? "active" : ""
-          }`}
-        >
-          {(pathname === "/" || pathname === "/about") && "/"} ABOUT
-        </Link>
-        <Link
-          href="/projects"
-          className={`section-link ${
-            pathname.includes("/projects") ? "active" : ""
-          }`}
-        >
-          {pathname.includes("/projects") && "/"} PROJECTS
-        </Link>
-        <Link
-          href="/skills"
-          className={`section-link ${pathname === "/skills" ? "active" : ""}`}
-        >
-          {pathname === "/skills" && "/"} SKILLS
-        </Link>
-        <Link
-          href="/techtalks"
-          className={`section-link ${
-            pathname === "/techtalks" ? "active" : ""
-          }`}
-        >
-          {pathname === "/techtalks" && "/"} TECH TALKS
-        </Link>
-        <Link
-          href="/volunteerings"
-          className={`section-link ${
-            pathname === "/volunteerings" ? "active" : ""
-          }`}
-        >
-          {pathname === "/volunteerings" && "/"} VOLUNTEERINGS
-        </Link>
-        <Link
-          href="/contact"
-          className={`section-link ${pathname === "/contact" ? "active" : ""}`}
-        >
-          {pathname === "/contact" && "/"} CONTACT
-        </Link>
+        {navItems.map(({ href, label, match }) => {
+          const isActive = match?.some((route) => pathname === route);
+          const classStyle = `link-item ${isActive ? "active" : ""}`;
+          return (
+            <Link key={href} className={classStyle} href={href}>
+              {isActive && "< "}
+              {label.toUpperCase()}
+              {isActive && " />"}
+            </Link>
+          );
+        })}
       </nav>
     </div>
   );
