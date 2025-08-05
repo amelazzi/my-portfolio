@@ -2,12 +2,10 @@
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import "./styles/colors.css";
-import "./layout.css";
+import "./layout.scss";
 import Sidebar from "./components/sidebar/sidebar";
-import Profile from "./components/profile/profile";
 import { usePathname } from "next/navigation";
-import { useRef, useEffect } from "react";
-import { handleStyleUpdate } from "../utils/updateStyle";
+import { ProfileWrapper } from "./components/profile/profile-wrapper/profile-wrapper";
 
 const oswald = localFont({
   src: "./fonts/OswaldVF.ttf",
@@ -27,35 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const portfolioContainerRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    handleStyleUpdate(
-      pathname,
-      portfolioContainerRef,
-      "grid-template-columns: 400px 1fr",
-      "grid-template-columns: 650px 1fr"
-    );
-
-    handleStyleUpdate(
-      pathname,
-      headerRef,
-      "width: calc(100% - 320px); align-items: center; transform: none; height:25vh",
-      "top: 10%; transform: translateY(-50%)"
-    );
-  }, [pathname]);
+  const isCompact = pathname !== "/" && pathname !== "/about";
 
   return (
     <html lang="en">
       <body className={`${oswald.variable} ${notoSans.variable}`}>
-        <div className="profile-container" ref={headerRef}>
-          <Profile />
-        </div>
+        <ProfileWrapper />
         <a href="/resume_Amel_AZZI.pdf" download>
           <button className="download-btn">Download Resume</button>
         </a>
-        <div className="portfolio-container" ref={portfolioContainerRef}>
+        <div className={`portfolio-container ${isCompact ? "compact" : ""}`}>
           <Sidebar />
           <main>{children}</main>
         </div>
