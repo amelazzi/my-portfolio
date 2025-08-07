@@ -1,19 +1,25 @@
+"use client";
 import Image from "next/image";
 import "./talk-card.css";
 import { TalkInfo } from "@/types/talk.types";
 import { formatDate } from "@/utils/date";
 import Link from "next/link";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 
 function TalkCard({ talk }: { talk: TalkInfo }) {
+  const isMobile = useIsMobile();
+  const imageWidth = isMobile ? 210 : 300;
+  const imageHeight = isMobile ? 120 : 180;
+
   return (
     <Link href={talk.link} target="_blank">
       <div className="talk card">
         <div className="talk-picture">
           <Image
             src={talk.image}
-            width={300}
-            height={180}
-            style={{ objectFit: "contain" }}
+            width={imageWidth}
+            height={imageHeight}
+            style={{ objectFit: "fill" }}
             alt={`${talk.title} picture`}
           />
         </div>

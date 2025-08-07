@@ -1,6 +1,14 @@
 .contact-section {
   background-color: var(--grey-color);
   padding-bottom: 0px;
+
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 16px;
+    border: none;
+  }
 }
 
 .contact {
@@ -9,6 +17,11 @@
   display: flex;
   justify-content: space-between;
   gap: 64px;
+
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
 }
 
 .contact-information {
@@ -17,6 +30,11 @@
   flex-direction: column;
   gap: 64px;
   margin-top: 48px;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    margin-top: 0;
+  }
 }
 
 .coords {

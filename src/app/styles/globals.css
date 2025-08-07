@@ -53,6 +53,9 @@ h6 {
 
 h1 {
   font-size: 58px;
+  @media (max-width: 1023px) {
+    font-size: 48px;
+  }
 }
 
 h2 {
@@ -105,6 +108,11 @@ button {
   background-color: var(--dark-grey-color);
   border-radius: 8px;
   padding: 32px;
+
+  @media (max-width: 1023px) {
+    padding: 32px 16px;
+    border: 0.8px solid var(--light-grey);
+  }
 }
 
 .card {
@@ -121,15 +129,25 @@ button {
     cursor: pointer;
     background-color: var(--grey-color);
   }
+
+  @media (max-width: 1023px) {
+    width: 250px;
+  }
 }
 
 .cards-container {
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, 350px);
   justify-content: space-between;
   row-gap: 32px;
+
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
 }
