@@ -5,6 +5,12 @@
   p {
     color: var(--light-grey);
   }
+
+  &:hover {
+    h4 {
+      color: var(--purple-color);
+    }
+  }
 }
 
 .talk-picture {
