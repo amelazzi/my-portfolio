@@ -1,0 +1,23 @@
+.navbar-container {
+  width: 100%;
+  height: 80px;
+  background-color: var(--dark-grey-color);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px solid var(--light-grey);
+  border-radius: 4px;
+  margin: 16px 0px;
+  padding: 24px;
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  h4 {
+    color: white;
+  }
+}
