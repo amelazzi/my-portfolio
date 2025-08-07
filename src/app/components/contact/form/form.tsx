@@ -112,46 +112,48 @@ function Form() {
 
   return (
     <form>
-      <div className="form-information">
-        <div className="form-container">
-          <TextField
-            label="Name"
-            placeholder="type your full name"
-            icon={<PersonIcon />}
-            ref={nameRef}
-            required={true}
-          />
-          <TextField
-            label="Phone"
-            placeholder="type phone number"
-            icon={<PhoneIcon />}
-            ref={phoneRef}
-          />
+      <div className="form-fields">
+        <div className="form-information">
+          <div className="form-container">
+            <TextField
+              label="Name"
+              placeholder="type your full name"
+              icon={<PersonIcon />}
+              ref={nameRef}
+              required={true}
+            />
+            <TextField
+              label="Phone"
+              placeholder="type phone number"
+              icon={<PhoneIcon />}
+              ref={phoneRef}
+            />
+          </div>
+          <div className="form-container">
+            <TextField
+              label="Company"
+              placeholder="company name"
+              icon={<BusinessIcon />}
+              ref={companyRef}
+            />
+            <TextField
+              label="Email address"
+              placeholder="type your email"
+              icon={<EmailIcon />}
+              ref={emailRef}
+              required={true}
+            />
+          </div>
         </div>
-        <div className="form-container">
-          <TextField
-            label="Company"
-            placeholder="company name"
-            icon={<BusinessIcon />}
-            ref={companyRef}
-          />
-          <TextField
-            label="Email address"
-            placeholder="type your email"
-            icon={<EmailIcon />}
-            ref={emailRef}
-            required={true}
-          />
-        </div>
+        <TextField
+          label="How can I help"
+          placeholder="type your message here"
+          icon={<ChatIcon />}
+          multiline={true}
+          ref={messageRef}
+          required
+        />
       </div>
-      <TextField
-        label="How can I help"
-        placeholder="type your message here"
-        icon={<ChatIcon />}
-        multiline={true}
-        ref={messageRef}
-        required
-      />
       <button
         onClick={(e) => {
           e.preventDefault();

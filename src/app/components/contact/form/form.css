@@ -2,19 +2,23 @@ form {
   width: 70%;
   background-color: var(--dark-grey-color);
   padding: 48px;
-  border-radius: 16px;
+  border-radius: 8px;
 
   display: flex;
   flex-direction: column;
   gap: 48px;
-  position: relative;
 
   button {
     background-color: #3f51b5;
-    position: absolute;
-    bottom: 48px;
-    right: 48px;
+    align-self: flex-end;
   }
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  flex: 1;
 }
 
 .form-information {
