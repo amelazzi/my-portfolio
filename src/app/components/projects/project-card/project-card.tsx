@@ -25,8 +25,8 @@ function ProjectCard({
             />
           </div>
           <div className="card-title">
-            <div> {projectInfo.title} </div>
-            <div> {projectInfo.role} </div>
+            <h5> {projectInfo.title} </h5>
+            <h6> {projectInfo.role} </h6>
           </div>
         </div>
         <div className="card-details">
@@ -34,7 +34,7 @@ function ProjectCard({
             <p>{projectInfo.summary}</p>
           </div>
           <div className="card-footer">
-            <h4>Project Info</h4>
+            <h5>Project Info</h5>
             <hr />
             <div className="project-info">
               <p>Client</p>

@@ -44,7 +44,7 @@
 
 .vertical-divider {
   border: none;
-  border-left: 1px solid lightgray;
+  border-left: 1px solid var(--light-grey);
   height: 30px;
   margin: 0 16p;
 }
