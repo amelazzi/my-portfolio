@@ -3,6 +3,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 64px;
+
+  &.compact-profile {
+    height: 25vh;
+  }
 }
 
 .profile-information {
@@ -14,6 +18,11 @@
 .picture-container {
   max-width: 550px;
   min-width: 550px;
+
+  &.compact-picture {
+    max-width: 160px;
+    min-width: 160px;
+  }
 }
 
 .profile-picture {
@@ -27,6 +36,10 @@
   flex-direction: row;
   justify-content: center;
   gap: 16px;
+}
+
+.hide-container {
+  display: none;
 }
 
 .social-media {
@@ -51,6 +64,7 @@
 }
 
 .information {
+  width: max-content;
   display: flex;
   flex-direction: column;
 }
