@@ -26,7 +26,7 @@ export const MobileSidebar = ({
             </div>
             <hr className="h-divider" />
           </div>
-          <nav>
+          <nav className="mobile-nav">
             {navItems.map(({ href, label, match }) => {
               return (
                 <Link className="link-item" key={href} href={href}>
