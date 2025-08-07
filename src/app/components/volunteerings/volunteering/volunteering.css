@@ -1,61 +1,37 @@
 .volunteering {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  width: 400px;
+  height: 120px;
+
+  flex-direction: row;
+  background-color: var(--dark-grey-color);
 
   &:hover {
-    cursor: pointer;
-    transform: scale(1.07);
+    background-color: var(--primary-color);
   }
 }
 
-.volunteering-logo {
-  width: 200px;
-  height: 250px;
-  border-radius: 24px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.volunteering-link {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+.active {
   background-color: var(--primary-color);
-  bottom: -16px;
-  right: 32px;
+}
 
-  font-size: 24px;
+.logo-container {
+  width: 72px;
+  height: 72px;
+  background-color: white;
+  border-radius: 8px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.volunteering-logo:nth-child(2n) {
-  height: 200px;
-}
-
-.volunteering-info {
+.info-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 0px 24px;
+  justify-content: center;
+  gap: 16px;
 
-  p {
-    font-size: 16px;
-  }
-}
-
-.volunteering-details {
-  display: flex;
-  justify-content: space-between;
-  p {
-    font-size: 12px;
-    color: lightgray;
+  h3 {
+    font-size: 28px;
   }
 }

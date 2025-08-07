@@ -9,9 +9,9 @@ export type ProjectStats = {
   reviews: number;
 };
 
-export type ProjectDates = {
+export type Dates = {
   start: number;
-  end: number;
+  end: number | "Present";
 };
 
 export type ProjectInfo = {
@@ -20,7 +20,7 @@ export type ProjectInfo = {
   logo: string;
   summary: string;
   client: string;
-  dates: ProjectDates;
+  dates: Dates;
   stacks: Stack;
   link?: string;
 };
