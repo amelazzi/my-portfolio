@@ -1,0 +1,28 @@
+.social-media {
+  max-width: 55px;
+  max-height: 55px;
+  min-width: 55px;
+  min-height: 55px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 1023px) {
+    max-width: 40px;
+    max-height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}

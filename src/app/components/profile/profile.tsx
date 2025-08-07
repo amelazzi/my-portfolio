@@ -4,29 +4,13 @@ import "./profile.scss";
 import "../../styles/colors.css";
 import Image from "next/image";
 import Picture from "../../../../public/images/profile-picture.png";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { handleStyleUpdate } from "@/utils/updateStyle";
+import { socialMedias } from "@/data/social-media.data";
+import { SocialMedia } from "../social-media/social-media";
 
 function Profile() {
-  const gitHubRef = useRef<HTMLDivElement>(null);
-  const xRef = useRef<HTMLDivElement>(null);
-  const linkedInRef = useRef<HTMLDivElement>(null);
-
   const pathname = usePathname();
   const isCompact = pathname !== "/" && pathname !== "/about";
-
-  useEffect(() => {
-    if (gitHubRef.current) {
-      gitHubRef.current.style.backgroundColor = "#FDAE03";
-    }
-    if (linkedInRef.current) {
-      linkedInRef.current.style.backgroundColor = "#579CF8";
-    }
-    if (xRef.current) {
-      xRef.current.style.backgroundColor = "#F0477D";
-    }
-  }, []);
 
   return (
     <div className={`profile-container ${isCompact ? "compact-profile" : ""}`}>
@@ -49,39 +33,9 @@ function Profile() {
       <div
         className={`${isCompact ? "hide-container" : "social-media-container"}`}
       >
-        <div className="social-media" ref={gitHubRef}>
-          <Link href="https://github.com/amelazzi" target="_blank">
-            <Image
-              src="/icons/github-icon.svg"
-              width={25}
-              height={25}
-              alt="X icon"
-            />
-          </Link>
-        </div>
-        <div className="social-media" ref={linkedInRef}>
-          <Link
-            href="https://www.linkedin.com/in/amel-azzi-625446b2/"
-            target="_blank"
-          >
-            <Image
-              src="/icons/linkedin-icon.svg"
-              width={25}
-              height={25}
-              alt="X icon"
-            />
-          </Link>
-        </div>
-        <div className="social-media" ref={xRef}>
-          <Link href="https://x.com/amelias_azzi" target="_blank">
-            <Image
-              src="/icons/x-icon.svg"
-              width={25}
-              height={25}
-              alt="X icon"
-            />
-          </Link>
-        </div>
+        {socialMedias.map((item, index) => (
+          <SocialMedia key={index} socialMedia={item} />
+        ))}
       </div>
     </div>
   );

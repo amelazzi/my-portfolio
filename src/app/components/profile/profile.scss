@@ -42,27 +42,6 @@
   display: none;
 }
 
-.social-media {
-  max-width: 55px;
-  max-height: 55px;
-  min-width: 55px;
-  min-height: 55px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.15);
-  }
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 .information {
   width: max-content;
   display: flex;
