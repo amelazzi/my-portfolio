@@ -7,10 +7,12 @@ import Picture from "../../../../public/images/profile-picture.png";
 import { usePathname } from "next/navigation";
 import { socialMedias } from "@/data/social-media.data";
 import { SocialMedia } from "../social-media/social-media";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 
 function Profile() {
   const pathname = usePathname();
   const isCompact = pathname !== "/" && pathname !== "/about";
+  const isMobile = useIsMobile();
 
   return (
     <div className={`profile-container ${isCompact ? "compact-profile" : ""}`}>
@@ -28,6 +30,13 @@ function Profile() {
           <h2>Amel AZZI</h2>
           <div>------------------------------</div>
           <h4> Fullstack Developer </h4>
+          {isMobile && (
+            <div className="social-media-container">
+              {socialMedias.map((item, index) => (
+                <SocialMedia key={index} socialMedia={item} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <div
