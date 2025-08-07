@@ -17,7 +17,13 @@
   width: 100%;
   min-height: 180px;
   max-height: 180px;
+  overflow: hidden;
   background-color: white;
+
+  @media (max-width: 1023px) {
+    width: 210px;
+    min-height: 120px;
+  }
 }
 
 .talk-title {
