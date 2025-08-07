@@ -1,0 +1,12 @@
+.profile-container {
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  z-index: 1;
+  left: 55%;
+
+  &.default-wrapper {
+    height: 25vh;
+    left: 80%;
+  }
+}

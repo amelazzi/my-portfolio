@@ -1,6 +1,6 @@
 "use client";
-import React, { RefObject, useEffect, useRef } from "react";
-import "./profile.css";
+import React, { useEffect, useRef } from "react";
+import "./profile.scss";
 import "../../styles/colors.css";
 import Image from "next/image";
 import Picture from "../../../../public/images/profile-picture.png";
@@ -14,37 +14,7 @@ function Profile() {
   const linkedInRef = useRef<HTMLDivElement>(null);
 
   const pathname = usePathname();
-  const profileContainerRef = useRef<HTMLDivElement>(null);
-  const pictureContainerRef = useRef<HTMLDivElement>(null);
-  const SocialMediasRef = useRef<HTMLDivElement>(null);
-  const informationRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    handleStyleUpdate(
-      pathname,
-      pictureContainerRef,
-      "max-width: 160px; min-width: 160px;",
-      "max-width: 500px; min-width: 500px;"
-    );
-    handleStyleUpdate(
-      pathname,
-      SocialMediasRef,
-      "display: none;",
-      "display: flex;"
-    );
-    handleStyleUpdate(
-      pathname,
-      profileContainerRef,
-      "justify-content: start; top: 32px; left: 300px;",
-      "justify-content: center; top: 0px; left: 400px;"
-    );
-    handleStyleUpdate(
-      pathname,
-      informationRef,
-      "display: flex;",
-      "display: none;"
-    );
-  }, [pathname]);
+  const isCompact = pathname !== "/" && pathname !== "/about";
 
   useEffect(() => {
     if (gitHubRef.current) {
@@ -59,22 +29,26 @@ function Profile() {
   }, []);
 
   return (
-    <div className="profile-container" ref={profileContainerRef}>
+    <div className={`profile-container ${isCompact ? "compact-profile" : ""}`}>
       <div className="profile-information">
-        <div className="picture-container" ref={pictureContainerRef}>
+        <div
+          className={`picture-container ${isCompact ? "compact-picture" : ""}`}
+        >
           <Image
             className="profile-picture"
             src={Picture}
             alt="profile picture"
           />
         </div>
-        <div className="information" ref={informationRef}>
+        <div className={`${isCompact ? "information" : "hide-container"}`}>
           <h2>Amel AZZI</h2>
-          <div>-----------------------------</div>
+          <div>------------------------------</div>
           <h4> Fullstack Developer </h4>
         </div>
       </div>
-      <div className="social-media-container" ref={SocialMediasRef}>
+      <div
+        className={`${isCompact ? "hide-container" : "social-media-container"}`}
+      >
         <div className="social-media" ref={gitHubRef}>
           <Link href="https://github.com/amelazzi" target="_blank">
             <Image

@@ -30,13 +30,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${oswald.variable} ${notoSans.variable}`}>
-        <ProfileWrapper />
-        <a href="/resume_Amel_AZZI.pdf" download>
-          <button className="download-btn">Download Resume</button>
-        </a>
-        <div className={`portfolio-container ${isCompact ? "compact" : ""}`}>
-          <Sidebar />
-          <main>{children}</main>
+        <div>
+          <a href="/resume_Amel_AZZI.pdf" download>
+            <button className="download-btn">Download Resume</button>
+          </a>
+          <div className={`portfolio-container ${isCompact ? "compact" : ""}`}>
+            <div className="sidebar">
+              <Sidebar />
+              <ProfileWrapper />
+            </div>
+            <main>{children}</main>
+          </div>
         </div>
       </body>
     </html>
