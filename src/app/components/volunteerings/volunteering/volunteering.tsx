@@ -1,48 +1,39 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import "./volunteering.css";
 import Image from "next/image";
-import Link from "next/link";
+import { VolunteeringInfo } from "@/types/volunteering.types";
 
 function Volunteering({
-  logo,
-  bgColor = "white",
-  name,
-  role,
-  startYear,
-  endYear,
-  link,
+  volunteering,
+  isActive,
+  onClick,
 }: {
-  logo: string;
-  bgColor?: string;
-  name: string;
-  role: string;
-  startYear: string;
-  endYear: string;
-  link: string;
+  volunteering: VolunteeringInfo;
+  isActive: Boolean;
+  onClick: MouseEventHandler<HTMLDivElement>;
 }) {
   return (
-    <Link href={link} target="_blank">
-      <div className="volunteering">
-        <div className="volunteering-logo" style={{ backgroundColor: bgColor }}>
-          <Image
-            src={logo}
-            width={180}
-            height={0}
-            style={{ height: "auto" }}
-            alt={`${name} logo`}
-          />
-        </div>
-        <div className="volunteering-info">
-          <p> {name} </p>
-          <div className="volunteering-details">
-            <p>{role}</p>
-            <p>
-              {startYear} - {endYear}
-            </p>
-          </div>
-        </div>
+    <div
+      className={"volunteering card" + `${isActive ? " active" : ""}`}
+      onClick={onClick}
+    >
+      <div className="logo-container">
+        <Image
+          src={volunteering.logo}
+          width={60}
+          height={60}
+          style={{ objectFit: "contain" }}
+          alt=""
+        />
       </div>
-    </Link>
+      <div className="info-container">
+        <h3> {volunteering.community} </h3>
+        <h6>
+          {volunteering.role} • {volunteering.dates.start} -
+          {volunteering.dates.end}
+        </h6>
+      </div>
+    </div>
   );
 }
 

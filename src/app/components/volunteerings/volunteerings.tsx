@@ -1,47 +1,48 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./volunteerings.css";
 import Volunteering from "./volunteering/volunteering";
+import { volunteerings } from "@/data/volunteerings.data";
+import Link from "next/link";
 
 function Volunteerings() {
+  const [active, setActive] = useState(volunteerings[0]);
+
   return (
     <div className="section">
       <h1> MY VOLUNTEERINGS </h1>
-      <div className="volunteerings">
-        <Volunteering
-          logo="/icons/gdg.png"
-          bgColor="white"
-          name="GDG Sophia-Antipolis"
-          role="Organizer"
-          startYear="2022"
-          endYear="today"
-          link="https://gdg.community.dev/gdg-sophia-antipolis/"
-        />
-        <Volunteering
-          logo="/icons/wtm.svg"
-          bgColor="white"
-          name="Google's Woman Techmakers"
-          role="Ambassador"
-          startYear="2018"
-          endYear="today"
-          link="https://developers.google.com/womentechmakers"
-        />
-        <Volunteering
-          logo="/icons/wtm-algiers.svg"
-          name="WTM Algiers"
-          role="Lead"
-          startYear="2017"
-          endYear="2019"
-          link="https://fr.linkedin.com/company/wtm-algiers"
-        />
-        <Volunteering
-          logo="/icons/gdg-algiers.png"
-          bgColor="#F3F3F3"
-          name="GDG Algiers"
-          role="Organizer"
-          startYear="2015"
-          endYear="2019"
-          link="https://gdg.community.dev/gdg-algiers/"
-        />
+      <div className="volunteerings-container">
+        <div className="volunteerings">
+          {volunteerings.map((volunteering, index) => (
+            <Volunteering
+              key={index}
+              volunteering={volunteering}
+              onClick={() => console.log(setActive(volunteering))}
+              isActive={active === volunteering}
+            />
+          ))}
+        </div>
+        <div className="volunteering-details">
+          <Link href={active.profileLink} target="_blank">
+            <h3>
+              {active.community} • {active.role}
+            </h3>
+          </Link>
+          <div className="volunteering-description">
+            <p> {active.description} </p>
+            <p> {active.roleDetails} </p>
+            {active.achievements.map((achievement, index) => (
+              <li key={index}>{achievement}</li>
+            ))}
+            <div className="skills">
+              {active.softSkills.map((skill, index) => (
+                <div key={index} className="soft-skill">
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

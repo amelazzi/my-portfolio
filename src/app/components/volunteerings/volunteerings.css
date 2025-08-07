@@ -1,5 +1,41 @@
+.volunteerings-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
 .volunteerings {
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.volunteering-details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.volunteering-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skills {
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 64px;
+  gap: 16px;
+}
+
+.soft-skill {
+  padding: 8px 16px;
+  border: 1px solid var(--light-grey);
+  color: var(--light-grey);
 }
