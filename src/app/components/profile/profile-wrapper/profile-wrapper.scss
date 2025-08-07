@@ -9,4 +9,9 @@
     height: 25vh;
     left: 80%;
   }
+
+  @media (max-width: 1023px) {
+    position: static;
+    height: 25vh;
+  }
 }
