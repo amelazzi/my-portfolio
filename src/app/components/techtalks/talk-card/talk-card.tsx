@@ -11,7 +11,7 @@ function TalkCard({ talk }: { talk: TalkInfo }) {
         <div className="talk-picture">
           <Image
             src={talk.image}
-            width={301}
+            width={300}
             height={180}
             style={{ objectFit: "contain" }}
             alt={`${talk.title} picture`}
