@@ -3,7 +3,7 @@ import { talks } from "../../../data/talks.data";
 
 function TechTalks() {
   return (
-    <div className="section">
+    <div id="tech-talks" className="section">
       <h1>Technical Talks</h1>
       <div className="cards-container">
         {talks.map((talk, index) => (

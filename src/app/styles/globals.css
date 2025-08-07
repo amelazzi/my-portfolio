@@ -151,3 +151,56 @@ button {
     gap: 32px;
   }
 }
+
+.nav-icon {
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  padding: 8px;
+  border: 0.5px solid var(--light-grey);
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-container {
+  background-color: var(--primary-color);
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.link-item {
+  position: relative;
+  font-family: var(--font-oswald);
+  font-size: 32px;
+  font-weight: 500;
+  &:hover,
+  &.active {
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -64px;
+      width: calc(100% + 96px);
+      height: 6px;
+      background: var(--purple-color);
+      border-radius: 10px;
+      z-index: -1;
+    }
+  }
+  &:hover {
+    cursor: default;
+  }
+}

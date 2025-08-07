@@ -4,7 +4,7 @@ import { projects } from "@/data/projects.data";
 
 function Projects() {
   return (
-    <div className="section">
+    <div id="projects" className="section">
       <h1>Projects</h1>
       <div className="cards-container">
         {Object.entries(projects).map(([key, project]) => (

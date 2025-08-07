@@ -6,6 +6,7 @@ export const ProfileWrapper = () => {
   const pathname = usePathname();
   return (
     <div
+      id="profile"
       className={
         `${pathname !== "/about" ? "default " : ""}` + "profile-container"
       }
