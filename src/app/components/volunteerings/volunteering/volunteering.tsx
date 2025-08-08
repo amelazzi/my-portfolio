@@ -48,7 +48,7 @@ function Volunteering({
           {volunteering.achievements.map((achievement, index) => (
             <li key={index}>{achievement}</li>
           ))}
-          <div className="skills">
+          <div className="volunteering-skills">
             {volunteering.softSkills.map((skill, index) => (
               <div key={index} className="soft-skill">
                 {skill}

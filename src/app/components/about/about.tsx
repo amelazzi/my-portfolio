@@ -3,8 +3,12 @@ import Link from "next/link";
 import "./about.css";
 import { SkillsCarousel } from "../skills/skills-carousel/skills-carousel";
 import { skills } from "@/data/skills.data";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
+import DownloadIcon from "@mui/icons-material/Download";
 
 function About() {
+  const isMobile = useIsMobile();
+
   return (
     <div className="about-section">
       <div className="about">
@@ -17,7 +21,7 @@ function About() {
             As a <b>Senior Fullstack Engineer</b> with 5+ years of experience, I
             specialize inbuilding scalable, user-focused applications using
             <b>Node.js, React.js</b>, and
-            <b>modern web technologies.</b> I thrive in collaborative teams and
+            <b> modern web technologies.</b> I thrive in collaborative teams and
             enjoy solving complex
           </p>
           <p>
@@ -31,9 +35,17 @@ function About() {
           <SkillsCarousel skills={[...skills.Frontend]} cardSize={80} />
           <p> ... and more</p>
         </div>
-        <Link href="/contact">
-          <button>Contact Me</button>
-        </Link>
+        {isMobile ? (
+          <a href="/resume_Amel_AZZI.pdf" download className="download-resume">
+            <button>
+              <DownloadIcon /> Download Resume
+            </button>
+          </a>
+        ) : (
+          <Link href="/contact">
+            <button>Contact Me</button>
+          </Link>
+        )}
       </div>
     </div>
   );
