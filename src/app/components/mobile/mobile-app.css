@@ -1,0 +1,7 @@
+.mobile-layout {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 1000;
+}

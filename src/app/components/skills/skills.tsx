@@ -5,14 +5,14 @@ import { SkillsCarousel } from "./skills-carousel/skills-carousel";
 
 function Skills() {
   return (
-    <div className="section">
+    <div id="skills" className="section">
       <h1>MY SKILLS</h1>
       <div className="skills-container">
         <div className="carousel-container">
           <SkillsCarousel skills={[...skills.Backend, ...skills.Databases]} />
           <SkillsCarousel skills={[...skills.Frontend]} />
         </div>
-        <hr className="skills-divider " />
+        <hr className="skills-divider" />
         <div className="skills">
           <li>
             <h4>• Front-End :</h4>
@@ -28,9 +28,7 @@ function Skills() {
           </li>
           <li>
             <h4>• Tools & Platforms :</h4>
-            <p>
-              <p>{[...skills.Tools].map((skill) => skill.name).join(", ")}</p>
-            </p>
+            <p>{[...skills.Tools].map((skill) => skill.name).join(", ")}</p>
           </li>
           <li>
             <h4>• Others :</h4>

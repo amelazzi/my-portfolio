@@ -6,6 +6,8 @@ import "./layout.scss";
 import Sidebar from "./components/sidebar/sidebar";
 import { usePathname } from "next/navigation";
 import { ProfileWrapper } from "./components/profile/profile-wrapper/profile-wrapper";
+import { useIsMobile } from "./hooks/useIsMobile";
+import MobileApp from "./mobile/page";
 
 const oswald = localFont({
   src: "./fonts/OswaldVF.ttf",
@@ -26,22 +28,30 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const isCompact = pathname !== "/" && pathname !== "/about";
+  const isMobile = useIsMobile();
 
   return (
     <html lang="en">
       <body className={`${oswald.variable} ${notoSans.variable}`}>
-        <div>
-          <a href="/resume_Amel_AZZI.pdf" download>
-            <button className="download-btn">Download Resume</button>
-          </a>
-          <div className={`portfolio-container ${isCompact ? "compact" : ""}`}>
-            <div className="sidebar">
-              <Sidebar />
-              <ProfileWrapper />
+        {isMobile ? (
+          <MobileApp />
+        ) : (
+          <div>
+            <a href="/resume_Amel_AZZI.pdf" download>
+              <button className="download-btn">Download Resume</button>
+            </a>
+            <div
+              className={`portfolio-container ${isCompact ? "compact" : ""}`}
+            >
+              <div className="sidebar">
+                <Sidebar />
+                <ProfileWrapper />
+              </div>
+
+              <main>{children}</main>
             </div>
-            <main>{children}</main>
           </div>
-        </div>
+        )}
       </body>
     </html>
   );

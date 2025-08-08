@@ -7,7 +7,10 @@ export const ProfileWrapper = () => {
   const isDefault = pathname !== "/about" && pathname !== "/";
 
   return (
-    <div className={`profile-container ${isDefault ? "default-wrapper" : ""}`}>
+    <div
+      id="profile"
+      className={`profile-container ${isDefault ? "default-wrapper" : ""}`}
+    >
       <Profile />
     </div>
   );

@@ -1,6 +1,5 @@
 import { navItems } from "@/data/sidebar.data";
 import "./mobile-sidebar.css";
-import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import { Dispatch, SetStateAction } from "react";
 
@@ -27,11 +26,16 @@ export const MobileSidebar = ({
             <hr className="h-divider" />
           </div>
           <nav className="mobile-nav">
-            {navItems.map(({ href, label, match }) => {
+            {navItems.map(({ id, href, label }) => {
               return (
-                <Link className="link-item" key={href} href={href}>
+                <a
+                  className="link-item"
+                  key={href}
+                  href={`#${id}`}
+                  onClick={() => setOpenSidebar(false)}
+                >
                   {label.toUpperCase()}
-                </Link>
+                </a>
               );
             })}
             <hr className="h-divider" />

@@ -11,7 +11,7 @@ function Volunteerings() {
   const [active, setActive] = useState(isMobile ? null : volunteerings[0]);
 
   return (
-    <div className="section">
+    <div id="volunteerings" className="section">
       <h1> MY VOLUNTEERINGS </h1>
       <div className="volunteerings-container">
         <div className="volunteerings">

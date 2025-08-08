@@ -10,8 +10,9 @@ import { useIsMobile } from "@/app/hooks/useIsMobile";
 
 function Contact() {
   const isMobile = useIsMobile();
+
   return (
-    <div className="section contact-section">
+    <div id="contact" className="section contact-section">
       <h1> LET'S TALK TOGETHER </h1>
       {isMobile && (
         <p>
