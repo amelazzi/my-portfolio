@@ -8,7 +8,8 @@
 
   @media (max-width: 1023px) {
     flex-direction: column;
-    gap: 8px;
+    gap: 64px;
+    margin-top: -32px;
   }
 }
 
@@ -28,6 +29,10 @@
   border: none;
   border-left: 0.8px solid var(--light-grey);
   height: 60%;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
 }
 
 .skills {
@@ -35,6 +40,11 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+
   li {
     display: flex;
     flex-direction: row;
