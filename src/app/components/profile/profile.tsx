@@ -7,12 +7,12 @@ import Picture from "../../../../public/images/profile-picture.png";
 import { usePathname } from "next/navigation";
 import { socialMedias } from "@/data/social-media.data";
 import { SocialMedia } from "../social-media/social-media";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useDevice } from "@/app/contexts/useDeviceSelector";
 
 function Profile() {
   const pathname = usePathname();
   const isCompact = pathname !== "/" && pathname !== "/about";
-  const isMobile = useIsMobile();
+  const { isMobile } = useDevice();
 
   return (
     <div className={`profile-container ${isCompact ? "compact-profile" : ""}`}>

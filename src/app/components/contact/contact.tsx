@@ -6,10 +6,10 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import HomeIcon from "@mui/icons-material/Home";
 import "./contact.css";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useDevice } from "@/app/contexts/useDeviceSelector";
 
 function Contact() {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDevice();
 
   return (
     <div id="contact" className="section contact-section">

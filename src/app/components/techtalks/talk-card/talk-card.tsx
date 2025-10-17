@@ -4,10 +4,10 @@ import "./talk-card.css";
 import { TalkInfo } from "@/types/talk.types";
 import { formatDate } from "@/utils/date";
 import Link from "next/link";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useDevice } from "@/app/contexts/useDeviceSelector";
 
 function TalkCard({ talk }: { talk: TalkInfo }) {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDevice();
   const imageWidth = isMobile ? 210 : 300;
   const imageHeight = isMobile ? 120 : 180;
 

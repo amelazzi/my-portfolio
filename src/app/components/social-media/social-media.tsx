@@ -2,11 +2,12 @@ import Link from "next/link";
 import "./social-media.css";
 import Image from "next/image";
 import { socialMedia } from "@/types/social-media.type";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useDevice } from "@/app/contexts/useDeviceSelector";
 
 export const SocialMedia = ({ socialMedia }: { socialMedia: socialMedia }) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDevice();
   const logoSize = isMobile ? 20 : 25;
+
   return (
     <div
       className="social-media"

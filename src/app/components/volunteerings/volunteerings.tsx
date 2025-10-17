@@ -4,11 +4,12 @@ import "./volunteerings.css";
 import Volunteering from "./volunteering/volunteering";
 import { volunteerings } from "@/data/volunteerings.data";
 import { VolunteeringDetails } from "./details/volunteering-details";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useDevice } from "@/app/contexts/useDeviceSelector";
 
 function Volunteerings() {
-  const isMobile = useIsMobile();
-  const [active, setActive] = useState(isMobile ? null : volunteerings[0]);
+  const { isMobile } = useDevice();
+
+  const [active, setActive] = useState(isMobile ? undefined : volunteerings[0]);
 
   return (
     <div id="volunteerings" className="section">

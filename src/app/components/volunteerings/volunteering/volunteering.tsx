@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from "react";
 import "./volunteering.css";
 import Image from "next/image";
 import { VolunteeringInfo } from "@/types/volunteering.types";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useDevice } from "@/app/contexts/useDeviceSelector";
 
 function Volunteering({
   volunteering,
@@ -13,9 +13,10 @@ function Volunteering({
   isActive: Boolean;
   onClick: MouseEventHandler<HTMLDivElement>;
 }) {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDevice();
   const showMobileView = isActive && isMobile;
   const showActive = isActive && !isMobile;
+
   return (
     <div
       className={

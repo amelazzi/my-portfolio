@@ -3,11 +3,11 @@ import Link from "next/link";
 import "./about.css";
 import { SkillsCarousel } from "../skills/skills-carousel/skills-carousel";
 import { skills } from "@/data/skills.data";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { useDevice } from "@/app/contexts/useDeviceSelector";
 import DownloadIcon from "@mui/icons-material/Download";
 
 function About() {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDevice();
 
   return (
     <div className="about-section">
