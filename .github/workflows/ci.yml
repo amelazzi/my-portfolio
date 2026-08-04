@@ -1,4 +1,4 @@
-name: My Portfolio — CI
+name: CI
 
 on:
   push:
@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 env:
@@ -43,8 +43,8 @@ jobs:
       - name: Run linting
         run: npm run lint
 
-  type-check:
-    name: Type Check
+  type_check:
+    name: TypeScript
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -87,8 +87,8 @@ jobs:
       - name: Build application
         run: npm run build
 
-  dependency-audit:
-    name: Dependency Audit
+  dependency_audit:
+    name: Production Dependency Audit
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -108,3 +108,30 @@ jobs:
 
       - name: Audit production dependencies
         run: npm audit --omit=dev --audit-level=high
+
+  mandatory-validation:
+    name: Mandatory Validation Gate
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - type_check
+      - build
+      - dependency_audit
+    if: ${{ always() }}
+    timeout-minutes: 5
+
+    steps:
+      - name: Check mandatory validation results
+        run: |
+          echo "lint: ${{ needs.lint.result }}"
+          echo "type-check: ${{ needs.type_check.result }}"
+          echo "build: ${{ needs.build.result }}"
+          echo "dependency-audit: ${{ needs.dependency_audit.result }}"
+
+          if [ "${{ needs.lint.result }}" != "success" ] || \
+             [ "${{ needs.type_check.result }}" != "success" ] || \
+             [ "${{ needs.build.result }}" != "success" ] || \
+             [ "${{ needs.dependency_audit.result }}" != "success" ]; then
+            echo "One or more mandatory validation jobs failed or did not complete successfully."
+            exit 1
+          fi
