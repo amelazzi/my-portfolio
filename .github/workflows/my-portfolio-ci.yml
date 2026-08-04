@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - feature/ci-workflow
   pull_request:
     branches:
       - master
